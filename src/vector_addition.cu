@@ -7,7 +7,6 @@ __global__ void vector_add(const float* d_input1, const float* d_input2, float* 
     }
 }
 
-// Note: d_input1, d_input2, d_output are all device pointers to float32 arrays
 extern "C" void solution(const float* d_input1, const float* d_input2, float* d_output, size_t n) {    
     int threadsPerBlock = 32;
     int blocksPerGrid = (n + threadsPerBlock - 1) / threadsPerBlock;
